@@ -34,7 +34,7 @@ if __name__ == '__main__':
 
     # Run the trained model and record video
     model = DQN.load("highway_dqn/model", env=env)
-    env = Monitor(env, directory="highway_dqn/videos", video_callable=lambda e: True)
+    env = Monitor(env, directory="highway_dqn/videos", video_callable=lambda e: True, force=True)
     env.set_monitor(env)
     env.configure({"simulation_frequency": 15})  # Higher FPS for rendering
 
